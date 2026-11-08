@@ -1,13 +1,12 @@
 from flask import Flask, request, jsonify
 import json, os, time
-
 app = Flask(__name__)
 FILE = "bugs.json"
-
 PAGE = """
 <!DOCTYPE html>
 <html>
 <body>
+<style>body{font-family:Arial;max-width:600px;margin:40px auto;background:#f4f6f8}h2{color:#2c3e50}button{background:#3498db;color:white;border:none;padding:6px 10px;border-radius:4px;cursor:pointer}li{margin:8px 0}</style>
   <h2>Bug Tracker</h2>
   <input id="title" placeholder="Bug title">
   <select id="priority">
