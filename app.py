@@ -15,9 +15,10 @@ PAGE = """
     <option>High</option>
   </select>
   <button onclick="addBug()">Add Bug</button>
-  <p id="msg" style="color:red"></p>
+ <input id="q" placeholder="Search bugs" oninput="filterBugs()"> <p id="msg" style="color:red"></p>
   <ul id="list"></ul>
   <script>
+  function filterBugs(){var t=document.getElementById('q').value.toLowerCase();document.querySelectorAll('#list li').forEach(function(li){li.style.display=li.textContent.toLowerCase().includes(t)?'':'none'})}
     async function loadBugs() {
       const res = await fetch('/bugs');
       const bugs = await res.json();
